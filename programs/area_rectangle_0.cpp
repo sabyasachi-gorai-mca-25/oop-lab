@@ -15,13 +15,15 @@ double areaRectangle(double length, double breadth) {
     return area;
 }
 
-int main() {
+#include <iostream>
+#include <iomanip>  // For std::fixed, std::setprecision, std::setw
 
+int main() {
     double length, breadth, area;
 
     // Prompt the user and read the length
     std::cout << "Enter the length of the rectangle: ";
-    cin >> length;
+    std::cin >> length;
 
     // Prompt the user and read the breadth
     std::cout << "Enter the breadth of the rectangle: ";
@@ -30,8 +32,11 @@ int main() {
     // Call the function to compute the area
     area = areaRectangle(length, breadth);
 
-    std::cout << format("Length: {:8.2f}\nBreadth: {:8.2f}\nArea: {:10.2f}\n",
-                   length, breadth, area);
+    // Use iomanip for formatted output
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "Length: " << std::setw(8) << length << '\n'
+              << "Breadth: " << std::setw(8) << breadth << '\n'
+              << "Area: " << std::setw(10) << area << '\n';
 
     return 0;
 }
