@@ -2,23 +2,24 @@
 #include <iomanip>  // For std::fixed, std::setprecision, std::setw
 
 //==================================================================
-// Class: Rectangle
-// Objective: To represent a rectangle and provide functionality
-//            to calculate its area.
+// Class Template: Rectangle<T>
+// Objective: To represent a rectangle with generic numeric type T
+//            and provide functionality to calculate its area.
 //==================================================================
+template <typename T>
 class Rectangle {
 private:
-    double length, breadth;  // Rectangle dimensions
+    T length, breadth;  // Rectangle dimensions
 
 public:
     //==============================================================
     // Constructor
     // Objective: Initialize a rectangle with given length and breadth.
-    // Input: double len (length), double brd (breadth)
+    // Input: T len (length), T brd (breadth)
     // Output: None
     // Side effects: Initializes private members length and breadth.
     //==============================================================
-    Rectangle(double len, double brd) {
+    Rectangle(T len, T brd) {
         this->length = len;
         this->breadth = brd;
     }
@@ -27,10 +28,10 @@ public:
     // Function: getLength
     // Objective: To return the length of the rectangle.
     // Input: None
-    // Output: double (length)
+    // Output: T (length)
     // Side effects: None
     //==============================================================
-    double getLength() const {
+    T getLength() const {
         return length;
     }
 
@@ -38,10 +39,10 @@ public:
     // Function: getBreadth
     // Objective: To return the breadth of the rectangle.
     // Input: None
-    // Output: double (breadth)
+    // Output: T (breadth)
     // Side effects: None
     //==============================================================
-    double getBreadth() const {
+    T getBreadth() const {
         return breadth;
     }
 
@@ -49,10 +50,10 @@ public:
     // Function: area
     // Objective: To calculate the area of the rectangle.
     // Input: None (uses private members length and breadth)
-    // Output: double (area = length × breadth)
+    // Output: T (area = length × breadth)
     // Side effects: None
     //==============================================================
-    double area() const {
+    T area() const {
         return length * breadth;
     }
 };
@@ -69,14 +70,14 @@ public:
 int main() {
     double length, breadth;
 
-    std::cout << "--- Rectangle Area Calculator ---\n\n";
+    std::cout << "--- Rectangle Area Calculator (Template Version) ---\n\n";
 
     // Prompt for and read the dimensions for the first rectangle
     std::cout << "Enter the length for the first rectangle: ";
     std::cin >> length;
     std::cout << "Enter the breadth for the first rectangle: ";
     std::cin >> breadth;
-    Rectangle rect1(length, breadth);  // Create first rectangle object
+    Rectangle<double> rect1(length, breadth);  // Create first rectangle object (double type)
 
     // Display the results for rect1 using manipulators
     std::cout << std::fixed << std::setprecision(2);
@@ -89,7 +90,7 @@ int main() {
     std::cin >> length;
     std::cout << "Enter the breadth for the second rectangle: ";
     std::cin >> breadth;
-    Rectangle rect2(length, breadth);  // Create second rectangle object
+    Rectangle<double> rect2(length, breadth);  // Create second rectangle object (double type)
 
     // Display the results for rect2 using manipulators
     std::cout << "Length: " << std::setw(8) << rect2.getLength() << "\n"
