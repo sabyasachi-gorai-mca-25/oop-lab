@@ -1,20 +1,27 @@
 #include <iostream>
-#include <format> // Required for C++20 formatting
-
 #include <cassert> // Required for assert()
-#include "succ.h" 
-/*******************************************************************
+#include "00_succ_pred.h"
 //==================================================================
 // Objective: To find the successor of a number.
 // Inputs:    number (size_t) - The non-negative integer.
 // Return value: The successor of the input number.
 // Side Effects: None.
 //==================================================================
-size_t succ(size_t number) {
-    // Approach: Use the pre-increment operator to find the successor.
-    return ++number;
+size_t succ(size_t number)
+{
+    // Approach: Return the next integer
+    return number + 1; // cleaner than pre-increment
 }
-*********************************************************************/
+
+/**
+ * Objective: Finds the predecessor of a given number 'n'
+ * Input: n: A non-negative number whose predecessor is sought
+ * candidate: A current candidate number used to check against 'n'
+ * Return: The predecessor of 'n'
+ */
+/*
+ANOTHER WAY OF DOING IT
+
 //==================================================================
 // Objective: To find the predecessor of a number.
 // Inputs:    number (size_t) - The non-negative integer to find the predecessor of.
@@ -32,22 +39,23 @@ size_t pred(size_t number, size_t pred_candidate = 0) {
         return pred(number, succ(pred_candidate));
 }
 
-//==================================================================
-// Objective: To serve as the main driver for the program.
-// Approach:  Reads a positive number from the console and outputs
-//            its predecessor using the recursive pred() function.
-//==================================================================
-int main() {
-    size_t number;
-    std::cout << "Enter a positive number: ";
-    std::cin >> number;
-
-    // A precondition for pred is that the number must be positive.
-    if (number > 0) {
-        std::cout << format("Predecessor of {:6d} is {:6d}\n", number, pred(number));
+*/
+size_t pred_helper(size_t n, size_t candidate) {
+    if (succ(candidate) == n) {
+        return candidate;
     } else {
-        std::cout << "Predecessor is undefined for non-positive numbers.\n";
+        return pred_helper(n, succ(candidate));
     }
+}
 
-    return 0;
-}   
+/**
+ * Objective: To find predecessor of a number
+ * Input: n: non-negative number
+ * Return value: predecessor of n
+ * Side Effects: None
+ */
+
+size_t pred(size_t n) {
+    return pred_helper(n, 0);
+}
+
