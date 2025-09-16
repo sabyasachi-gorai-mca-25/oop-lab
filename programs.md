@@ -1,10 +1,16 @@
 ## Programs Done
-<!-- 1. calculate area and perimeter of a rectangle using class and object. -->
-<!-- 2. calculate area and perimeter of a rectangle using class and object using template. -->
-<!-- 3. To find the sum of a given number of integers. -->
-<!-- 4. Take a string convert it to float if it contain point, to int if does not. -->
-5. Find the successor and predecessor of a given number using recurssion.
-6. Add two number using successor or predecessor using recurssion.
-7. Substract two number using successor or predecessor.(recursion)
-8. Multiply two number using successor or predecessor. (recursion)
-9. Tower of hanoi problem solve using (photos in phone app)
+1. calculate area of rectangle.
+2. take number i/p as String if it contains Point convert to float otherwise int.
+3. use variant with Switch case
+4. to find the succ of a non-neg. int.
+5. to find the pred of a non-neg. int using recursion.
+6. Add two numbers using succ. and pred using recursion.
+7. Subtract two numbers using the same method.
+8. multiplication same process.
+9. is division possible.
+10. Find remainder using Recursion
+11. Find quotient of two numbers using Recursion.
+12. Tower of Hanoi problem solve. [Show Stack space]
+13. GCD of two non negative numbers.
+14. LCM of two non-neg. numbers.
+15. To find sum of a given number of integers.
