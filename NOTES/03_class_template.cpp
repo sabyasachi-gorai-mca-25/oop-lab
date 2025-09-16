@@ -1,9 +1,9 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-
 template <typename T>
-class Box {
+class Box
+{
 private:
     T value;
 
@@ -12,14 +12,14 @@ public:
 
     T getValue() const { return value; }
 };
-int main(){
+int main()
+{
 
     Box<int> intBox(10);
     Box<double> doubleBox(5.5);
     Box<string> strBox("Hello");
-    
+
     cout << intBox.getValue() << endl;    // 10
     cout << doubleBox.getValue() << endl; // 5.5
     cout << strBox.getValue() << endl;    // Hello
-    
 }

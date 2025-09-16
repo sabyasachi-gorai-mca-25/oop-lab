@@ -1,7 +1,9 @@
-one of the most powerful features of the language. They let you write generic code that works with any data type.
+> one of the most powerful features of the language. They let you write generic code that works with any data type.
 
 ### Why Need Template?
-Without templates, you’d need different functions:
+
+```cpp
+// Without templates, you’d need different functions:
     int myMax(int a, int b) {
         return (a > b) ? a : b;
     }
@@ -10,7 +12,7 @@ Without templates, you’d need different functions:
         return (a > b) ? a : b;
     }
 
-But with templates:
+// But with templates:
 
     template <typename T>
     T myMax(T a, T b) {
@@ -20,3 +22,5 @@ But with templates:
 cout << myMax(10, 20) << endl;        // int
 cout << myMax(5.5, 2.3) << endl;      // double
 cout << myMax('a', 'z') << endl;      // char
+
+```
