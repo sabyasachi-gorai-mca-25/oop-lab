@@ -71,3 +71,6 @@ A **side effect** occurs when an operation changes state outside its local scope
 
 ---
 
+## way to write code
+- use size_t instead of int if possible
+-  define assumptions if required like numbers are positive or user will never input 0 
